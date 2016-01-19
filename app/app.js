@@ -8,8 +8,12 @@ angular.module('myApp', [
   'myApp.view3',
   'myApp.view4',
   'myApp.view5',
-  'myApp.version'
+  'myApp.version',
+  'ngMessages'
 ]).
+.controller('MainCtrl', MainCtrl);
+    
+function MainCtrl() {}
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
