@@ -1,4 +1,4 @@
-'use strict';
+
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
@@ -10,10 +10,11 @@ angular.module('myApp', [
   'myApp.view5',
   'myApp.version',
   'ngMessages'
-]).
-.controller('MainCtrl', MainCtrl);
-    
-function MainCtrl() {}
-config(['$routeProvider', function($routeProvider) {
+])
+.controller('MainCtrl', MainCtrl)
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
+function MainCtrl() {}
+
+
