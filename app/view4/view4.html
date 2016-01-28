@@ -1,14 +1,27 @@
+<!DOCTYPE html>
+<html>
+<header>
 <h1>Here are some of our events this year</h1>
-<p>Event 1</p>
-<p>Event 2</p>
-<p>Event 3</p>
-<p>Event 4</p>
-<p>Event 5</p>
-<p>Event 6</p>
-<p>Event 7</p>
-<p>Event 8</p>
-<p>Event 9</p>
-<p>Event 10</p>
-<p>Event 11</p>
-<p>Event 12</p>
-<p>This is the partial for view 1.</p>
+</header>
+<body ng-app="app" ng-controller="eventsController">
+	<div ng-controller="StudentController">
+      <div>
+         {{ greeting()}}
+      </div>
+      <div ng-repeat="e in event.period">
+        result for: {{event.hour}} = {{event.date}} = {{event.venue}}
+      </div>
+    </div>
+</body>
+<script src='javascript/service.js'></script>
+<footer>
+</div>
+<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<iframe src="http://www.youtube.com/subscribe_widget?p=XYZ" 
+       style="overflow: hidden; height: 105px; width: 300px; border: 0;" 
+       scrolling="no" frameBorder="0">
+    </iframe>
+    <a href="http://www.facebook.com/">Visit our Facebook page</a>
+</footer>
+</html>

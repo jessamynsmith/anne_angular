@@ -1,31 +1,45 @@
 <!-- Page Content -->
 <!DOCTYPE html>
 <html>
-<body class="container" ng-app="app" ng-controller="MainCtrl as main">
+<header>
 
     <div class="row">
 
         <div class="col-lg-12">
-            <h1 class="page-header">Contact
-                <small>We'd Love to Hear From You!</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="../index.html">Home</a></li>
-                <li class="active">Contact</li>
-            </ol>
+            <h1 class="page-header">Contact</h1>
+            <h2>We'd Love to Hear From You!</h2>
         </div>
-
     </div>
+</header>
+<body class="container" ng-app="app" ng-controller="formController">
+
     <!-- /.row -->
 
     <div class="row">
-
+      
         <div class="col-sm-8">
             <h3>Let's Get In Touch!</h3>
-            <form name="userForm" role="form" method="POST" action="#" novalidate>
+            <form name="userForm" role="form" method="POST" action="#" novalidate="">
                 <div class="row">
-                    <div class="form-group col-lg-6">
-                        <label for="input1">Name</label>
+                        Name:
+                    <input type="text" ng-model="user.name" name="uName" required="" /><br />
+                <div ng-show="form.$submitted || form.uName.$touched">
+                <div ng-show="form.uName.$error.required">{{Tell us your name.}}</div>
+        </div>
+
+    E-mail:
+                <input type="email" ng-model="user.email" name="uEmail" required="" />
+                <br />
+                <div ng-show="form.$submitted || form.uEmail.$touched">
+                    <span ng-show="form.uEmail.$error.required">{{Tell us your email.}}</span>
+                    <span ng-show="form.uEmail.$error.email">{{This is not a valid email.}}</span>
+                </div>
+                    <input type="text" ng-model="user.phone" name="uPhone" required="" /><br />
+                    <div ng-show="form.$submitted || form.uPhone.$touched">
+                    <div ng-show="form.uPhone.$error.required">{{Give us your phone no.}}</div>
+                    <span ng-show="form.uPhone.$error.phone">{{This is not a valid phone.}}</span>
+                </div>
+                        <!--<label for="input1">Name</label>
                         <input type="text" name="username" ng-model="user.username" ng-minlength="3"   ng-maxlength="8" required>
                         <div ng-messages="userForm.name.$error">
                         <p ng-message="minlength">Your name is too short.</p>
@@ -33,7 +47,7 @@
                         <p ng-message="required">Your name is required.</p>
                         </div>
                     </div>
-                    <div class="form-group col-lg-8">
+                    <div class="form-group col-lg-8" ng-model="user.email" required>
                         <label for="input2">Email Address</label>
                         <input type="email" name="contact_email" class="form-control" id="input2">
                         <div ng-messages="userForm.email.$error">
@@ -42,33 +56,33 @@
                         <p ng-message="minlength">Your email is too short.</p>
                         <p ng-message="maxlength">Your email is too long.</p>
                         <p ng-message="required">Your email is required.</p>
-                        <div class="help-block" ng-messages="userForm.email.$error">
-                        </div>
                         </div>
                     </div>
-                    <div class="form-group col-lg-6">
+                    </div>
+                    <div class="form-group col-lg-6" ng-model="user.phone" required>
                         <label for="input3">Phone Number</label>
                         <input type="phone" name="contact_phone" class="form-control" id="input3">
                         <div ng-messages="userForm.phone.$error">
                         <p ng-message="minlength">Your phone number is too short.</p>
                         <p ng-message="maxlength">Your phone number is too long.</p>
                         <p ng-message="required">Your phone number is required.</p>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="clearfix"></div>
+                        <div class="form-group col-lg-12" ng-model="user.message" required>
+                            <label for="input4">Message</label>
+                            <input type="message" name="message" class="form-control" id="input4">
+                                <div ng-messages="userForm.message.$error">
+                                <textarea name="contact_message" class="form-control" rows="6" id="input4"></textarea>
+                                <p ng-message="required">Your message here.</p>
+                            </div>
+                        </div>
                     <div class="form-group col-lg-12">
-                        <label for="input4">Message</label>
-                        <textarea name="contact_message" class="form-control" rows="6" id="input4"></textarea>
-                    </div>
-                    <div ng-messages="userForm.contact_message.$error">
-                        <p ng-message="required">Your message here.</p>
-                    </div>
-                    <div class="form-group col-lg-12">
-                        <input type="hidden" name="save" value="contact">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </form>
+            </div>
         </div>
 
         <div class="col-sm-4">
@@ -92,12 +106,18 @@
                 <li class="tooltip-social twitter-link"><a href="#twitter-profile" data-toggle="tooltip"
                                                            data-placement="top" title="Twitter"><i
                         class="fa fa-twitter-square fa-2x"></i></a></li>
-                <li class="tooltip-social google-plus-link"><a href="#google-plus-page" data-toggle="tooltip"
-                                                               data-placement="top" title="Google+"><i
-                        class="fa fa-google-plus-square fa-2x"></i></a></li>
             </ul>
         </div>
         </div>
     </body>
-    <!-- /.row -->
+    <footer>
+</div>
+<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<iframe src="http://www.youtube.com/subscribe_widget?p=XYZ" 
+       style="overflow: hidden; height: 105px; width: 300px; border: 0;" 
+       scrolling="no" frameBorder="0">
+    </iframe>
+    <a href="http://www.facebook.com/">Visit our Facebook page</a>
+</footer>
     </html>

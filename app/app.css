@@ -28,3 +28,81 @@
   content: "";
   padding: 0;
 }
+.nav{
+  text-align: center;
+}
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #005f5f;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+ 
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+ 
+  /* Option 1 - Display Inline */
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+
+  #slideshow {
+    position: relative;
+    height: 350px;
+  }
+  #slideshow IMG{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+  }
+  #slideshow IMG:active{
+    z-index: 10;
+  }
+  #slideshow IMG.last-active{
+    z-index: 9;
+  }
+  .row{
+    overflow: hidden;
+    height: 70px;
+    box-shadow: 0 1px 0 #f5f5f5 inset;
+    transition: all 0.5s linear;
+  }
+  .col-sm-8 input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+  .col-sm-8 input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }
