@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html>
-<header>
-<h1>Here are some of our events this year</h1>
-</header>
+<html lang="en-US">
+<title>This year's events.</title>
+<meta charset="UTF-8">
+<p>Click on any of the links to see when and where we're playing</p>
+<a href>January</a></br>
+<a href>February</a></br>
+<a href>March</a></br>
+<a href>April</a></br>
+<a href>May</a></br>
+<a href>June</a></br>
+<a href>July</a></br>
+<a href>August</a></br>
+<a href>September</a></br>
+<a href>October</a></br>
+<a href>November</a></br>
+<a href>December</a></br>
 <body ng-app="app" ng-controller="eventsController">
-	<div ng-controller="StudentController">
       <div>
          {{ greeting()}}
       </div>
       <div ng-repeat="e in event.period">
         result for: {{event.hour}} = {{event.date}} = {{event.venue}}
       </div>
-    </div>
 </body>
-<script src='javascript/service.js'></script>
-<footer>
-</div>
+<script src='view4/service.js'></script>
+<div>
 <a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<iframe src="http://www.youtube.com/subscribe_widget?p=XYZ" 
-       style="overflow: hidden; height: 105px; width: 300px; border: 0;" 
-       scrolling="no" frameBorder="0">
+<iframe src="http://www.youtube.com/subscribe_widget?p=XYZ" style="overflow: hidden; height: 105px; width: 300px; border: 0;">
     </iframe>
     <a href="http://www.facebook.com/">Visit our Facebook page</a>
-</footer>
+</div>
 </html>

@@ -15,9 +15,10 @@ angular.module('myApp', [
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
-function MainCtrl() {}
+function MainCtrl() {
 
-});
+}
+
 angular.module('bandForm', [])
 .controller('formController', ['$scope', function($scope) {
   $scope.master = {};
@@ -35,12 +36,11 @@ angular.module('bandForm', [])
   };
 
   $scope.reset();
-}]);
+}])
 .controller('bandService',function($scope,EventsService) {
-//  
   
   $scope.event = EventsService.getEvent();
-  $scope.greeting = function(){
-    return "Greetings " + $scope.event.hour() + $scope.event.date() $scope.event.venue();
-  }
-});
+    $scope.greeting = function(){
+   return "Greetings " + $scope.event.hour() + $scope.event.date() + ' ' + $scope.event.venue();
+   }
+ });
