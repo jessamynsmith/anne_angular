@@ -15,32 +15,49 @@ angular.module('myApp', [
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
-function MainCtrl() {
 
-}
+.controller('FormCtrl', ['$scope', function($scope) {
+    $scope.formInfo = {};
+    $scope.saveData = function() {
+      $scope.nameRequired = '';
+      $scope.emailRequired = '';
+      $scope.phoneRequired = '';
+      $scope.messageRequired = '';
 
-angular.module('bandForm', [])
-.controller('formController', ['$scope', function($scope) {
-  $scope.master = {};
+      if (!$scope.formInfo.Name) {
+        $scope.nameRequired = 'Name Required';
+      }
 
-  $scope.update = function(user) {
-    $scope.master = angular.copy(user);
-  };
+      if (!$scope.formInfo.Email) {
+        $scope.emailRequired = 'Email Required';
+      }
 
-  $scope.reset = function(form) {
-    if (form) {
-      form.$setPristine();
-      form.$setUntouched();
-    }
-    $scope.user = angular.copy($scope.master);
-  };
+      if (!$scope.formInfo.Phone) {
+        $scope.phoneRequired = 'Phone Required';
+      }
+      if (!$scope.formInfo.Message) {
+        $scope.passwordRequired = 'Message Required';
+      }
+    };
+  }])
+  .controller('FormCtrl2', [function() {
 
-  $scope.reset();
-}])
-.controller('bandService',function($scope,EventsService) {
-  
-  $scope.event = EventsService.getEvent();
-    $scope.greeting = function(){
-   return "Greetings " + $scope.event.hour() + $scope.event.date() + ' ' + $scope.event.venue();
-   }
- });
+  }]);
+angular.module('concertControllers')
+.controller('RemoteConcertController',function($scope,RemoteConcertService) 
+{
+      //  
+        $scope.concert = {};
+        RemoteConcertService.getConcert()
+                        .then( function(result) {
+                              //promise complete
+                              $scope.concert=concert.data;
+                              })
+                        .catch( function(error) { console.log('error', error)});
+        $scope.showConcert = function(){
+          return ($scope.concerts ? $scope.concerts=false : $scope.concerts=true)
+        }
+  $scope.aGradeFilter = function (subject) {
+            return (subject.marks > 74);
+  }
+});

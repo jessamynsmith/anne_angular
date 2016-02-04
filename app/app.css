@@ -1,10 +1,16 @@
 /* app css stylesheet */
-
+#div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    bottom: 0px;
+    right: 0px;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
-  padding: 0 0 0.5em;
+  padding: 1 1 1em;
 }
 
 .menu:before {
@@ -77,33 +83,142 @@
     margin-right: -4px;
   }
 
-  #slideshow {
+#slideshow IMG {
+    display: none;
     position: relative;
-    height: 350px;
-  }
-  #slideshow IMG{
-    position: absolute;
-    top: 0;
+    top: -20;
     left: 0;
     z-index: 8;
   }
-  #slideshow IMG:active{
-    z-index: 10;
+
+#slideshow IMG.active {
+    display: block;
   }
-  #slideshow IMG.last-active{
-    z-index: 9;
-  }
+#slideshow img {
+  height: 160px;
+}
 
   .row{
-    overflow: hidden;
-    height: 70px;
+    overflow: hidden;    
     box-shadow: 0 1px 0 #f5f5f5 inset;
     transition: all 0.5s linear;
   }
-  .col-sm-8 input.ng-invalid.ng-touched {
-    background-color: #FA787E;
+  .col-md-6 input.ng-invalid.ng-touched {
+    background-color: red;
   }
 
-  .col-sm-8 input.ng-valid.ng-touched {
-    background-color: #78FA89;
+  .col-md-6 input.ng-valid.ng-touched {
+    background-color: green;
   }
+  .col-md-6 input.ng-valid.ng-touched.ng-submitted {
+    background-color: blue;
+  }
+.container {
+        display: -moz-inline-block;
+        display: inline-block;
+        width: 1000px;
+        clear: both;
+        float: left;
+        text-align: left;
+        margin-right: 15px;
+    }
+.container input {
+        width: 100%;
+        clear: both;
+    }
+    * {
+  border: none;
+}
+textarea:focus, input:focus {
+  border: 2px solid #900;
+}
+.class:form-horizontal{
+  text-align:left;
+  margin-right: 15px;
+  padding: 2px 2px;
+  float: left;
+}
+.links container{
+  flex-flow;
+  flex-wrap;
+}
+.container form-group{
+  flex-direction: row;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  flex: 1;
+  /* Just to center the form on the page */
+    margin: 0 auto;
+    width: 400px;
+    /* To see the outline of the form */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    margin-top: 1em;
+}
+.label {
+    /* To make sure that all labels have the same size and are properly aligned */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+.input, textarea {
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+    font: 1em sans-serif;
+
+    /* To give the same size to all text field */
+    width: 300px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* To harmonize the look & feel of text field border */
+    border: 1px solid #999;
+}
+.textarea {
+    /* To properly align multiline text fields with their labels */
+    vertical-align: top;
+
+    /* To give enough room to type some text */
+    height: 5em;
+
+    /* To allow users to resize any textarea vertically
+       It does not work on every browsers */
+    resize: vertical;
+}
+.button {
+    /* To position the buttons to the same position of the text fields */
+    padding-left: 90px; /* same size as the label elements */
+}
+button {
+    /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
+    margin-left: .5em;
+}
+a.panel-heading {
+    display: block;
+}
+.panel-group{
+  .panel, .panel-heading {
+    border:none !important;
+  }
+  .panel-body {
+    border: 1px solid #ddd !important; 
+      border-width: 0 1px 1px 1px !important;
+  }
+  .panel-heading a, a.panel-heading {
+    outline: 0;
+  }
+  .panel-heading a:hover,.panel-heading a:focus, a.panel-heading:hover, a.panel-heading:focus {
+    text-decoration: none;  
+  }
+  .panel-heading .icon-indicator {
+    margin-right: 10px;
+  }
+  .panel-heading .icon-indicator:before {
+    content:"\e114";
+  }
+  .panel-heading.collapsed .icon-indicator:before {
+    content:"\e080";
+  }
+}

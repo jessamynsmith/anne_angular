@@ -7,27 +7,39 @@
             <h2 class="page-header">Contact</h2>
         </div>
     </div>
-<body class="container" ng-app="app" ng-controller="formController">
-    <!--<div class="row">-->
-        <div class="col-sm-8">
+,<!--<body class="container" ng-app="app" ng-controller="formController">
+    <div class="row">
+      <!--  <div class="col-sm-12">
             <h3>Let's Get In Touch!</h3>
-            <form name="userForm" role="form" method="POST" action="#" novalidate="" ng-submit="submit()">
-                <div class="row">Name:
-                <input type="text" ng-model="user.name" name="uName" required="" /></div>
+               <form name="userForm" class="form-horizontal" role="form" method="POST" action="#" novalidate="" ng-submit="submit()">
+                <div class="form-group">Name:</div>
                 <div ng-show="userForm.user.name.$submitted && userForm.uName.$touched && userForm.uName.$invalid"></div>
                 <div ng-show="userForm.user.name.$error.required">Tell us your name.</div>
-                </div>
-                <div class="row">E-mail:
+                    <label for="uName" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="user.name"
+                               id="uName" name="uName" required="" placeholder="Name" />
+                    
+                  </div>
+                <div class="form-group">E-mail:
                 <input type="email" ng-model="user.email" name="uEmail" required="" /></div>
                     <div ng-show="userForm.user.user.email.$submitted && form.user.email.$touched && form.user.email.$invalid">
                     <span ng-show="userForm.user.email.$error.required">Tell us your email.</span>
                     <span ng-show="userForm.user.email.$error.email">This is not a valid email.</span>
+                    <label for="uEmail" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="user.email" id="uEmail" name="uEmail" required="" placeholder="Email" />
+                    </div>
                 </div>
-                <div class="row">Telephone no.:
+                <div class="form-group">Phone no.:
                     <input type="text" ng-model="user.phone" name="uPhone" required="" /></div>
                     <div ng-show="userForm.user.phone.$submitted && userForm.user.phone.$touched && userForm.user.phone.$invalid">
                     <div ng-show="userForm.user.phone.$error.required">Give us your phone no.</div>
                     <span ng-show="userForm.user.phone.$error.phone">This is not a valid phone.</span>
+                    <label for="uPhone" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="user.phone" id="uPhone" name="uPhone" required="" placeholder="Phone" />
+                    </div>
                 </div>
                         <!--<label for="input1">Name</label>
                         <input type="text" name="username" ng-model="user.username" ng-minlength="3"   ng-maxlength="8" required>
@@ -57,19 +69,68 @@
                         <p ng-message="maxlength">Your phone number is too long.</p>
                         <p ng-message="required">Your phone number is required.</p>
                         </div>-->
-                    </div>
-                    <div class="clearfix">Your message:
-                        <textarea name="contact_message" input type="message" class="form-control" id="input4" ng-model="user.message" rows="6" required></textarea></div>
+                   <!-- </div>
+                    <div class="form-group">
+                    <input type="text" ng-model="user.message" name="uMessage" required="" /></div>
+                    <div ng-show="userForm.user.message.$submitted && userForm.user.message.$touched && userForm.user.message.$invalid">
+                        <textarea name="contact_message" ng-model="user.message" name="uMessage" input type="message" class="form-control" id="input4" rows="6" required="" placeholder="Your message here"></textarea></div><br/>
                         <div ng-messages="userForm.message.$error">
-                        <p ng-message="required">Your message here.</p>
+                        <label for="uMessage" class="col-md-6 control-label">Phone</label>
+                    <div class="col-sm-10">
                     </div>
+                    How did you hear about us?<br/> <input type="radio" ng-model="user.choice" value="web" />Internet site<br/>
+                    <input type="radio" ng-model="user.choice" value="people" />Friends/Family/other people<br />
+                    <input type="radio" ng-model="user.choice" value="media" />Social media site<br />
                     <div class="form-group col-lg-12">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary"ng-click="submit()">Submit</button>
                     </div>
                 </div>
             </form>
-            </div>
+            </div>-->
         </div>
+        <form class="form-horizontal" role="form" ng-controller="FormCtrl">
+  <div class="form-group">
+    <label for="inputName3" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-4">
+      <input class="form-control" id="inputName3" placeholder="Name" ng-model="formInfo.Name">
+      <span ng-show="nameRequired">{{nameRequired}}</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-4">
+      <input class="form-control" id="inputEmail3" placeholder="Email" ng-model="formInfo.Email">
+      <span ng-show="emailRequired">{{emailRequired}}</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPhone3" class="col-sm-2 control-label">Phone</label>
+    <div class="col-sm-4">
+      <input class="form-control" id="inputPhone3" placeholder="Phone" ng-model="formInfo.Phone">
+      <span ng-show="phoneRequired">{{phoneRequired}}</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputMessage3" class="col-sm-2 control-label">Message</label>
+    <div class="col-sm-4">
+      <textarea class="form-control" input type="text" rows="3" id="inputMessage3" placeholder="Message" ng-model="formInfo.Message"></textarea>
+      <span ng-show="messageRequired">{{messageRequired}}</span>
+    </div>
+  </div>
+  How did you hear about us?<br/> 
+    <input type="radio" ng-model="formInfo.Choice" value="web" />Internet site<br/>
+    <input type="radio" ng-model="formInfo.Choice" value="people" />Friends/Family/other people<br />
+    <input type="radio" ng-model="formInfo.Choice" value="media" />Social media site<br />
+    What events do you wish to book us for?<br/>
+    <input type="checkbox" ng-model="formInfo.Choice" value="wedding" />Wedding reception<br/>
+    <input type="checkbox" ng-model="formInfo.Choice" value="corporate" />Corporate reception<br/>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" ng-click="saveData()" class="btn btn-success">Sign up</button>
+    </div>
+  </div>
+  <span>{{formInfo}}</span>
+</form>
         <div class="col-sm-4">
             <p>The Monkees<br>
             Swing/Jazz band<br>
@@ -82,12 +143,14 @@
             <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
         </div>
 </body>
-<div>
+<div class="links">
+    <div class="container">
+        <div class="row">
 <a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<iframe src="http://www.youtube.com/subscribe_widget?p=XYZ" 
-       style="overflow: hidden; height: 105px; width: 300px; border: 0;" 
-       scrolling="no" frameBorder="0"></iframe>
+<iframe src="http://www.youtube.com/subscribe_widget?p=XYZ" style="overflow: hidden; height: 105px; width: 300px; border: 0;" scrolling="no" frameBorder="0"></iframe>
     <a href="http://www.facebook.com/">Visit our Facebook page</a>
-</div>
+    </div>
+    </div>
+    </div>
 </html>
