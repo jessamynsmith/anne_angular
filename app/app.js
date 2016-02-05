@@ -11,12 +11,12 @@ angular.module('myApp', [
   'myApp.version',
   'ngMessages'
 ])
-.controller('MainCtrl', MainCtrl)
+.controller('MainCtrl', [])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
 
-.controller('FormCtrl', ['$scope', function($scope) {
+angular.module('myApp', myApp).controller('FormCtrl', ['$scope', function($scope) {
     $scope.formInfo = {};
     $scope.saveData = function() {
       $scope.nameRequired = '';
@@ -39,10 +39,10 @@ angular.module('myApp', [
         $scope.passwordRequired = 'Message Required';
       }
     };
-  }])
-  .controller('FormCtrl2', [function() {
+}]);
+  /*.controller('FormCtrl2', [function() {
 
-  }]);
+  }]);*/
 angular.module('concertControllers')
 .controller('RemoteConcertController',function($scope,RemoteConcertService) 
 {
