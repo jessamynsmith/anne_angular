@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['BandService', 'bandServices']);
+angular.module('myApp', []);
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
@@ -16,7 +16,7 @@ angular.module('myApp', [
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
 
-angular.module('myApp', myApp).controller('FormCtrl', ['$scope', function($scope) {
+angular.module('myApp').controller('FormCtrl', ['$scope', function($scope) {
     $scope.formInfo = {};
     $scope.saveData = function() {
       $scope.nameRequired = '';
@@ -40,24 +40,3 @@ angular.module('myApp', myApp).controller('FormCtrl', ['$scope', function($scope
       }
     };
 }]);
-  /*.controller('FormCtrl2', [function() {
-
-  }]);*/
-angular.module('concertControllers')
-.controller('RemoteConcertController',function($scope,RemoteConcertService) 
-{
-      //  
-        $scope.concert = {};
-        RemoteConcertService.getConcert()
-                        .then( function(result) {
-                              //promise complete
-                              $scope.concert=concert.data;
-                              })
-                        .catch( function(error) { console.log('error', error)});
-        $scope.showConcert = function(){
-          return ($scope.concerts ? $scope.concerts=false : $scope.concerts=true)
-        }
-  $scope.aGradeFilter = function (subject) {
-            return (subject.marks > 74);
-  }
-});

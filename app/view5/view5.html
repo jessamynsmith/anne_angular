@@ -122,8 +122,9 @@
     <input type="radio" ng-model="formInfo.Choice" value="people" />Friends/Family/other people<br />
     <input type="radio" ng-model="formInfo.Choice" value="media" />Social media site<br />
     What events do you wish to book us for?<br/>
-    <input type="checkbox" ng-model="formInfo.Choice" value="wedding" />Wedding reception<br/>
-    <input type="checkbox" ng-model="formInfo.Choice" value="corporate" />Corporate reception<br/>
+            <label>{{selected}}</label>
+    <input type="checkbox" ng-checked="selected=='wedding'" ng-true-value="'wedding'"ng-model="formInfo.Choice" value="wedding" />Wedding reception<br/>
+    <input type="checkbox" ng-checked="selected=='corporate'" ng-true-value="'corporate'"ng-model="formInfo.Choice" value="corporate" />Corporate reception<br/>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" ng-click="saveData()" class="btn btn-success">Sign up</button>

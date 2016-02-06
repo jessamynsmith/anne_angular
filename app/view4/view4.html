@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <div class="container">
   <h2>Events</h2>
-  <p><strong>Note:</strong> Click on<strong>any</strong> month to see when and where the Monkees are playing throughout 2016.</p>
+  <p><strong>Note:</strong> Click on <strong> any </strong> month to see when and where the Monkees are playing throughout 2016.</p>
 <div class="panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">January</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">January</a>
       </h4>
     </div>
     <div id="collapse1" class="panel-collapse collapse in">
@@ -19,7 +19,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">February</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse2">February</a>
       </h4>
     </div>
     <div id="collapse2" class="panel-collapse collapse">
@@ -29,7 +29,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">March</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse3">March</a>
       </h4>
     </div>
     <div id="collapse3" class="panel-collapse collapse">
@@ -39,7 +39,7 @@
    <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">April</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse4">April</a>
       </h4>
     </div>
     <div id="collapse4" class="panel-collapse collapse in">
@@ -49,7 +49,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">May</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse5">May</a>
       </h4>
     </div>
     <div id="collapse5" class="panel-collapse collapse">
@@ -59,7 +59,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">June</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse6">June</a>
       </h4>
     </div>
     <div id="collapse6" class="panel-collapse collapse">
@@ -69,7 +69,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">July</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse7">July</a>
       </h4>
     </div>
     <div id="collapse7" class="panel-collapse collapse in">
@@ -79,7 +79,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">August</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse8">August</a>
       </h4>
     </div>
     <div id="collapse8" class="panel-collapse collapse">
@@ -89,7 +89,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">September</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse9">September</a>
       </h4>
     </div>
     <div id="collapse9" class="panel-collapse collapse in">
@@ -99,7 +99,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">October</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse10">October</a>
       </h4>
     </div>
     <div id="collapse10" class="panel-collapse collapse">
@@ -109,7 +109,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse11">November</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse11">November</a>
       </h4>
     </div>
     <div id="collapse11" class="panel-collapse collapse in">
@@ -119,7 +119,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse12">December</a>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse12">December</a>
       </h4>
     </div>
     <div id="collapse12" class="panel-collapse collapse">
@@ -131,7 +131,7 @@
 $(document).ready(function(){
     $(".btn").click(function(){
         $("#myCollapsible").collapse({
-            toggle: false
+            toggle: true
         });
         $(".toggle-btn").click(function(){
         $("#myCollapsible").collapse('toggle');
@@ -139,18 +139,6 @@ $(document).ready(function(){
     });
 });
 </script>
-<!--<a href>January</a></br>
-<a href>February</a></br>
-<a href>March</a></br>
-<a href>April</a></br>
-<a href>May</a></br>
-<a href>June</a></br>
-<a href>July</a></br>
-<a href>August</a></br>
-<a href>September</a></br>
-<a href>October</a></br>
-<a href>November</a></br>
-<a href>December</a></br>-->
 <p>Prices range from €1,700 to €1,900 for your wedding</p>
 <p>Prices range from €900 to €1,100 for your office party</p>
 <body ng-app="app" ng-controller="eventsController">
