@@ -57,17 +57,17 @@
   display: block;
   transition: .3s background-color;
 }
- 
+
 .nav a:hover {
   background-color: #005f5f;
 }
- 
+
 .nav a.active {
   background-color: #fff;
   color: #444;
   cursor: default;
 }
- 
+
 @media screen and (min-width: 600px) {
   .nav li {
     width: 120px;
@@ -76,7 +76,7 @@
     line-height: 50px;
     font-size: 1.4em;
   }
- 
+
   /* Option 1 - Display Inline */
   .nav li {
     display: inline-block;
@@ -99,7 +99,7 @@
 }
 
   .row{
-    overflow: hidden;    
+    overflow: hidden;
     box-shadow: 0 1px 0 #f5f5f5 inset;
     transition: all 0.5s linear;
   }
@@ -203,14 +203,14 @@ a.panel-heading {
     border:none !important;
   }
   .panel-body {
-    border: 1px solid #ddd !important; 
+    border: 1px solid #ddd !important;
       border-width: 0 1px 1px 1px !important;
   }
   .panel-heading a, a.panel-heading {
     outline: 0;
   }
   .panel-heading a:hover,.panel-heading a:focus, a.panel-heading:hover, a.panel-heading:focus {
-    text-decoration: none;  
+    text-decoration: none;
   }
   .panel-heading .icon-indicator {
     margin-right: 10px;
@@ -265,4 +265,8 @@ border-width: 0 1px 1px 1px !important;
 }
 .slide{
 	margin: 50px;
+}
+
+.flexslider-container {
+  width: 300px;
 }

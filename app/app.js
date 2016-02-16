@@ -9,7 +9,8 @@ angular.module('myApp', [
   'myApp.view4',
   'myApp.view5',
   'myApp.version',
-  'ngMessages'
+  'ngMessages',
+  'angular-flexslider'
 ])
 .controller('MainCtrl', [])
 .config(['$routeProvider', function($routeProvider) {
