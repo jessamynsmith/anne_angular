@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view4', ['ngRoute'])
+angular.module('myApp.view4', ['ngRoute', 'concertsServices'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view4', {
@@ -9,6 +9,7 @@ angular.module('myApp.view4', ['ngRoute'])
   });
 }])
 
-.controller('View4Ctrl', [function() {
+.controller('View4Ctrl', ['$scope', 'Concerts', function($scope, Concerts) {
+  $scope.events = Concerts.all();
 
 }]);

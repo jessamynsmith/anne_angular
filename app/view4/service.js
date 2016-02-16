@@ -11,10 +11,13 @@ angular.module('concertsServices', [])
 
   // Some fake testing data
   var concerts = [{
+    id: 1,
     month: 1,
     monthName: 'January',
     day: '10',
-    venue: 'O2 Arena Dublin 1'
+    venue: 'O2 Arena Dublin 1',
+    description: 'The Monkees are playing at 8pm at the O2 Arena, Dublin 1 on January 10th, 2016.',
+    url: 'http://www.ticketmaster.ie/section/concerts?tm_link=tm_homeA_music_header'
   }, {
     month: 2,
     monthName: 'February',
