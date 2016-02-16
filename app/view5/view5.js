@@ -9,6 +9,10 @@ angular.module('myApp.view5', ['ngRoute'])
   });
 }])
 
-.controller('View5Ctrl', [function() {
+.controller('View5Ctrl', ['$scope', function($scope) {
+    $scope.formInfo = {};
+    $scope.saveData = function() {
+      console.log('saveData 1');
+    }
 
 }]);
